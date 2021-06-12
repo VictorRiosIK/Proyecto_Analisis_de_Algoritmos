@@ -1,0 +1,53 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.centrado{
+   text-align: center; 
+}
+.site-header{
+    background-color:#343F56;
+    color: #fff;
+    padding: 10px 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+main{
+    width: 60%;
+    margin: 10px auto;
+
+}
+main .entradas{
+    width: 100%;
+    display: flex;
+}   
+main .entradas .c-entradas{
+    margin: 10px;
+}
+main .entradas .c-entradas input{
+    margin: 10px;
+    border: none;
+    display: inline-block;
+    padding: 5px 10px;
+    width: 50%;
+    border-bottom: 1px solid #000;
+}
+main .entradas .c-entradas button{
+    border: none;
+    padding: 5px 15px;
+    border:1px solid #000;
+}
+main .entradas .c-entradas button:hover{
+    background-color: #535c68;
+    transition: all 0.3s ease;
+    color: #fff;
+    cursor: pointer;
+}
+#tituloResultado{
+    margin: 20px;
+}
+.estructuraArbol{
+    margin: 10px auto;
+}
+#Table{
+    margin: 10px auto;
+}

@@ -1,0 +1,255 @@
+.Principal{
+	overflow: hidden;
+	width: 100%;
+	background-color: #018ABE;
+}
+
+.Formulario{
+	float:left;
+	border-top-width: thick;
+	border-right-width: thin;
+	border-bottom-width: thick;
+	border-left-width: thin;
+	border-color: black;
+	background-color: #018ABE;
+	width: 100%;
+}
+
+#container{
+	text-align:center;
+	background-color: #018ABE;
+	height: 100%;
+	width: 100%;
+}
+
+#div1{
+	align-items:center;
+	justify-content: center;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+#div2{
+	background-color: #018ABE;
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+#divF{
+	height:100%;
+	width: 100%;
+	align-items:center;
+	justify-content: center;
+	background-color: #018ABE;
+}
+
+.table2{
+	background:powderblue;
+	border-collapse: collapse;
+	border: navy 6px solid;
+	background-color: #018ABE;
+}
+
+body{
+	text-align: center;
+	background-color: #018ABE;
+	color: blue;
+	margin: 0px;
+	font-family: Quicksand;
+}
+
+header{
+	background-image: url(../../imagenes/imagenes/naturaleza.jpg);
+	background-color: #0a0a95;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	justify-content: right;
+	align-items:center;
+	display: flex;
+	height: 130px;
+	color: darkslategrey;
+	left: 0px;
+	right: 0px;
+	margin: 0px;
+}
+
+article{
+  color: black;
+  margin: 30px;
+  text-align: left;
+	background-color: #018ABE;
+}
+
+section{
+	margin: auto;
+	align-items:center;
+	justify-content: center;
+	display: flex;
+	background-color: #018ABE;
+  color: darkslategrey;
+}
+
+aside{
+  color: black;
+  margin: 10px;
+  text-align: left;
+}
+
+nav{
+	color: yellowgreen;
+}
+
+main{
+	width: 640px; 
+	text-align: left; 
+	margin: 0px;
+}
+
+.navigation{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	flex-grow: 1;
+	list-style: none;
+	margin: 0; 
+	height: 60px;
+	width: 800px;
+}
+
+.titulo{
+	align-self: : flex-start;
+	color: yellowgreen;
+}
+
+.navigation a {
+	text-decoration: none;
+	display: block;
+	padding: 1em;
+	color: yellowgreen;
+}
+
+.navigation a:hover {
+	background: cadetblue;
+}
+
+@media all and (max-width: 800px) {
+
+	.navigation {
+   	justify-content: space-around;
+  	}
+  	
+}
+
+@media all and (max-width: 600px) {
+
+	.navigation {
+   	flex-flow: column wrap;
+   	padding: 0;
+	}
+	
+	.navigation a { 
+		text-align: center; 
+		padding: 10px;
+		border-top: 1px solid rgba(255, 255, 255,0.3); 
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+	}
+	
+	.navigation li:last-of-type a {
+  		border-bottom: none;
+	}
+	
+}
+
+.flex-containerv {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.flex-containerv > aside {
+	background-color: white;
+	margin: 0px;
+	color: fuchsia;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+}
+
+.flex-containerv > article {
+	background-color: white;
+	margin: 0px;
+	color: aquamarine;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+}
+
+.flex-containerh {
+  display: flex;
+  background-color: white;
+}
+
+.flex-containerh > aside {
+  background-color: white;
+  margin: 0px;
+  color: fuchsia;
+  font-size: 30px;
+}
+
+.flex-containerh > article {
+  background-color: white;
+  margin: 0px;
+  color: aquamarine;
+  font-size: 30px;
+}
+
+.flex-containerh > section {
+  background-color: white;
+  margin: 0px;
+  color: chartreuse;
+}
+
+#g3{
+	background-color: lightgray;
+}
+
+.f2{
+ 	line-height: 15px; 
+ 	width: 310px;
+}
+
+.f2 font {
+	color: gray;
+ 	margin: 20px;
+}
+
+.f2 font:hover {
+	color: red;
+}
+
+.colorLink{
+	color: tomato;
+}
+
+footer{
+	background-color: #002244;
+	text-align: center;
+	justify-content: right;
+	align-items:center;
+	display: flex;
+	color: white;
+	left: 0px;
+	right: 0px;
+	margin: 0px;
+	height: 85px;
+   position: absolute;
+   bottom: 0;
+}
