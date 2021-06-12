@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Subconjuntos</title>
+    <link rel="stylesheet" href="Top-Down/css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="site-header centrado">
+        <h1>SUMA DE SUBCONJUNTOS</h1>
+        <p>PROGRAMACION DINAMICA</p>
+        <p class="separador">Métodos </p>
+        <div class="metodos">
+            <ul>
+                <a href="Top-Down/index.html">
+                    <li>Método Top-Down</li>
+                </a>
+                <a href="">
+                    <li>Método Bottom-up</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+    <main class="infoPrincipal centrado">
+        <h2>PLANTEAMIENTO DEL PROBLEMA</h2>
+        <p>Dado un conjunto de números enteros no negativos y una suma de valores, determine si hay un subconjunto del conjunto dado con una suma igual a la suma dada.</p>
+        <p>Tomando de ejemplo la siguiente imagen</p>
+        <img src="img/índice.jpeg" alt="">
+    </main>
+    <div class="metodoRecursivo centrado">
+        <div class="descripcion">
+            <div class="explicacion">
+                <h3 class="centrado">MÉTODO DE SOLUCIÓN POR FUERZA BRUTA</h3>
+                <p>
+                    Se consideran 2 casos en donde cada elemento del arreglo tiene dos opciones, incluirse en el subconjunto o no. Al final se devuelve true o false dependiendo de si se encuentra el subconjunto o no.
+                    El caso base para este problema será cuando la suma devuelva un número negativo o cuando no queden elementos en el arreglo. Cuando la suma sea 0, devuelve True.
+                </p>
+                <img src="img/fuerzaBruta.png" alt="">
+            </div>
+            <div class="complejidad ">
+                <h3 class="centrado">ORDEN DE COMPLEJIDAD</h3>
+                <p>Este problema se caracteriza por tener un orden de complejidad exponencial O(2^n), es un problema que prueba todos los subconjuntos del conjunto dado el peor caso. Es un problema de tipo NP-Complete (No se conoce una solución de tiempo polinomial para este problema)
+                </p>
+                <p>Recordamos algunos algoritmos que cumplen con la característica de tiempo polinomial: <span class="azul">Binary Search O(logn)</span>, <span class="azul">Linear Search O(n)</span>, <span class="azul">Merge Sort O(nlogn)</span>, <span class="azul">Matrix Multiplication O(n^3)</span>.
+                </p>
+                <p class="separado centrado">Un algoritmo se considera NP-Complete cuando:</p>
+                <ul>
+                    <li>
+                        Un algoritmo de búsqueda de fuerza bruta puede resolverlo y la exactitud de cada  solución se puede verificar rápidamente.
+                    </li>
+                    <li>
+                        El problema se puede utilizar para simular cualquier otro problema con una capacidad de solución similar.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="programacionDinamica centrado">
+        <h3>MÉTODO DE SOLUCIÓN POR PROGRAMACIÓN DINÁMICA</h3>
+        <div class="descripcion">
+            <p>
+                Mediante la implementación recursiva se presentan sub problemas que se resuelven una y otra vez, por lo que se considera que el problema presenta una estructura superpuesta (subproblemas superpuestos) y que puede solucionarse mediante memoización o tabulación.
+            </p>
+            <p>
+                Los dos métodos de DP son:
+            </p>
+            <ul>
+                <li>
+                    <span class="nombreMetodo">Top-Down</span> con Memoization este método sigue el orden natural de la recursión, pero se determina si cierta instancia fue o no previamente calculada.</li>
+                <li>
+                    <span class="nombreMetodo">Bottom-Up (Tabulación)</span> por otro lado este método se construye la solución desde los casos bases, siguiendo la dirección opuesta al árbol visto anteriormente. Cada vez que se quiere calcular un problema, se sabe que se tienen los subproblemas calculados.
+                </li>
+            </ul>
+
+        </div>
+        <p class="nota">
+            NOTA: Para ver el funcionamiento de cada algoritmo, vaya al inicio de el sitio y presione en el método que desea ver
+        </p>
+    </div>
+    <footer class="centrado">
+        <p>Proyecto Análisis de Algoritmos</p>
+        <p>Equipo OJVE</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP-DOWN</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="site-header centrado">
+        <h1>PROGRAMACION DINAMICA</h1>
+        <p>Método Top-Down</p>
+    </header>
+
+    <main class="centrado">
+        <p class="indicacion">INGRESE LOS DATOS QUE SOLICITA EL PROGRAMA, UNA VEZ PRESIONADO EL BOTON DE BUSQUEDA, GENERARA EL ARBOL, INDICANDO QUE NUMERO SUMA ESE NIVEL</p>
+        <div class="entradas">
+            <div class="c-entradas">
+                <input type="text" name="num1" id="num1" placeholder="Ingresa un numero">
+                <button onclick="setNum()">Ingresar</button>
+            </div>
+            <div class="c-entradas">
+            <!-- <input type="text" name="num2" id="num2" placeholder="Borra un numero">
+            <button onclick="delNum()" >Borrar</button> -->
+            </div>
+            <div class="c-entradas">
+                <input type="text" name="num3" id="num3" placeholder="Busca un numero">
+                <button onclick="busqueda()" >Buscar</button>
+            </div>
+        </div>
+        <div>
+            <p id="Conjunto"></p>
+        </div>
+        <p id="tituloResultado"></p>
+        <table class="estructuraArbol centrado" id="estructura">
+        </table>
+    </main>
+    <script src="js/anime.min.js"></script>
+    <script src="algoritmo-topDown/Funs.js"></script>
+   
+</body>
+</html>
