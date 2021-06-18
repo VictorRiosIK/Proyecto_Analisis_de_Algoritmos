@@ -1,156 +1,156 @@
-var n = 0;
-var conjunto = [];
+var x = 0;
+var arreglo = [];
 var Matriz = [];
-var tam = 0;
+var tamano = 0;
 var aux = [];
-var nuevoCodigoHtml3 = '<h style="color:#000; background:#fff; font-family: Quicksand;">';
-var nuevoCodigoHtml4 = '</h>';
-var nuevoCodigoHtml5 = "";
+var nCHtml3 = '<h style="color:#000; background:#fff; font-family: Quicksand;">';
+var nCHtml4 = '</h>';
+var nCHtml5 = "";
 var k = 0;
 
 
 function setNum(){
-	if(n === 0){}
+	if(x === 0){}
 	else{
-		for(k = 0; k <= n; k++){
+		for(k = 0; k <= x; k++){
 			if(k === 0){
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[n] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[x] + nCHtml4;
 			}
 			else{
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[k - 1] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[x - 1] + nCHtml4;
 			}
-			document.getElementById("a" + (k)).innerHTML = nuevoCodigoHtml5;
+			document.getElementById("a" + (k)).innerHTML = nCHtml5;
 		}
 	}
 	if(document.getElementById("num1").value == ""){
 		alert("Inserta un valor numerico");
 	}
 	else{
-		var bin = [0,0,0,0,0];
+		var sup = [0,0,0,0,0];
 		var aux = [];
 		var i = 0;
 		var j = 0;
-		var suma = 0;
-		var comb = 0;
+		var sumaT = 0;
+		var combA = 0;
 		var num1 = parseInt(document.getElementById("num1").value);
 		document.getElementById("num1").value = "";
-		conjunto[n] = num1;
-		n = n + 1;
-		for(i = 0; i < n; i++){
-			suma = suma + conjunto[i];
+		arreglo[x] = num1;
+		x = x + 1;
+		for(i = 0; i < x; i++){
+			sumaT = sumaT + arreglo[i];
 		}
-		tam = suma;
-		suma = 0;
-		for(i = 0; i < n; i++){
-			comb = 1+(2 * comb);
+		tamano = sumaT;
+		sumaT = 0;
+		for(i = 0; i < x; i++){
+			combA = 1+(2 * combA);
 		}
-		for(i = 0; i <= tam; i++){
+		for(i = 0; i <= tamano; i++){
 			Matriz[i] = [0,0];
 		}
-		for(i = 0; i <= tam; i++){
-			for(j = 0; j <= n; j++){
+		for(i = 0; i <= tamano; i++){
+			for(j = 0; j <= x; j++){
 		   	Matriz[i][j] = 0;
 			}
 		}
-		for(i = 0; i <= tam; i++){
+		for(i = 0; i <= tamano; i++){
 			aux[i] = 0;
 		}
 		aux[0] = 1;
-		for(i = 0; i < comb; i++){
-			for(j = 0; j < n; j++){
-				if(bin[j] == 1){
-					bin[j] = 0;
+		for(i = 0; i < combA; i++){
+			for(j = 0; j < x; j++){
+				if(sup[j] == 1){
+					sup[j] = 0;
 				}
 				else{
-					bin[j] = 1;
-					j = n + 1;
+					sup[j] = 1;
+					j = x + 1;
 				}
 			}
-			for(j = 0; j < n; j++){
-				if(bin[j] == 1){
-					suma = suma + conjunto[j];
+			for(j = 0; j < x; j++){
+				if(sup[j] == 1){
+					sumaT = sumaT + arreglo[j];
 				}
 			}
-			if(aux[suma] == 1){}
+			if(aux[sumaT] == 1){}
 			else{
-				for(j = 0; j < n; j++){
-					if(bin[j] == 1){
-						Matriz[suma][j + 1] = 1;
+				for(j = 0; j < x; j++){
+					if(sup[j] == 1){
+						Matriz[sumaT][j + 1] = 1;
 					}
 				}
-				aux[suma] = 1;
+				aux[sumaT] = 1;
 			}
-			suma = 0;
+			sumaT = 0;
 		}
 		Matriz[0][0] = 1;
-		conjunto[n] = 0;
-		var nuevoCodigoHtml = "";
-		nuevoCodigoHtml = nuevoCodigoHtml  + '<tr>';
-		for(j = 0; j <= (tam + 1); j++){
+		arreglo[x] = 0;
+		var nCHtml = "";
+		nCHtml = nCHtml  + '<tr>';
+		for(j = 0; j <= (tamano + 1); j++){
 			if(j === 0){
-				nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; width:35px; font-family: Quicksand;">';
+				nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; width:35px; font-family: Quicksand;">';
 			}
 			else{
-				nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + (j - 1);
+				nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + (j - 1);
 			}
-			nuevoCodigoHtml = nuevoCodigoHtml + '</td>';
+			nCHtml = nCHtml + '</td>';
 		}
-		nuevoCodigoHtml = nuevoCodigoHtml + '</tr>';
-		for(j = 0; j <= n; j++){
-			nuevoCodigoHtml = nuevoCodigoHtml  + '<tr>';
-			for(var i = 0; i <= (tam + 1); i++){
+		nCHtml = nCHtml + '</tr>';
+		for(j = 0; j <= x; j++){
+			nCHtml = nCHtml  + '<tr>';
+			for(var i = 0; i <= (tamano + 1); i++){
 				if(i === 0){
 					if(j === 0){
-						nuevoCodigoHtml = nuevoCodigoHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + conjunto[j + n];
+						nCHtml = nCHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + arreglo[j + x];
 					}
 					else{
-						nuevoCodigoHtml = nuevoCodigoHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + conjunto[j - 1];
+						nCHtml = nCHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + arreglo[j - 1];
 					}
 				}
 				else{
-					nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + Matriz[i - 1][j];
+					nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + Matriz[i - 1][j];
 				}
-				nuevoCodigoHtml = nuevoCodigoHtml + '</td>';
+				nCHtml = nCHtml + '</td>';
 			}
-			nuevoCodigoHtml = nuevoCodigoHtml + '</tr>';
+			nCHtml = nCHtml + '</tr>';
 		}
-		document.getElementById("Table").innerHTML = nuevoCodigoHtml;
+		document.getElementById("Table").innerHTML = nCHtml;
 	}
 }
 
 function DelNum(){
-	if(n === 0){
+	if(x === 0){
 		alert("No has ingresado numeros aun");
 	}
 	else{
-		for(k = 0; k <= n; k++){
+		for(k = 0; k <= x; k++){
 			if(k === 0){
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[n] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[x] + nCHtml4;
 			}
 			else{
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[k - 1] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[x - 1] + nCHtml4;
 			}
-			document.getElementById("a" + (k)).innerHTML = nuevoCodigoHtml5;
+			document.getElementById("a" + (k)).innerHTML = nCHtml5;
 		}
 		if(document.getElementById("num2").value == ""){
 			alert("Inserta un valor numerico");
 		}
 		else{
-			var bin = [0,0,0,0,0];
+			var sup = [0,0,0,0,0];
 			var aux = [];
 			var i = 0;
 			var j = 0;
 			var ban = 0;
-			var suma = 0;
-			var comb = 0;
+			var sumaT = 0;
+			var combA = 0;
 			var num2 = parseInt(document.getElementById("num2").value);
 			document.getElementById("num2").value = "";
 			if(num2 === 0){
 				alert("El conjunto vacio no puede ser eliminado");
 			}
 			else{
-				for(i = 0; i < n; i++){
-					if(conjunto[i] == num2){
+				for(i = 0; i < x; i++){
+					if(arreglo[i] == num2){
 						j = i;
 						ban = 1;
 					}
@@ -160,89 +160,89 @@ function DelNum(){
 					alert("Tu numero no existe en el conjunto");
 				}
 				else{
-					for(i = j; i < n; i++){
-						conjunto[i] = conjunto[i + 1];
+					for(i = j; i < x; i++){
+						arreglo[i] = arreglo[i + 1];
 					}
-					n = n - 1;
-					for(i = 0; i < n; i++){
-						suma = suma + conjunto[i];
+					x = x - 1;
+					for(i = 0; i < x; i++){
+						sumaT = sumaT + arreglo[i];
 					}
-					tam = suma;
+					tam = sumaT;
 					suma = 0;
-					for(i = 0; i < n; i++){
-						comb = 1+(2 * comb);
+					for(i = 0; i < x; i++){
+						combA = 1+(2 * combA);
 					}
-					for(i = 0; i <= tam; i++){
+					for(i = 0; i <= tamano; i++){
 						Matriz[i] = [0,0];
 					}
-					for(i = 0; i <= tam; i++){
-						for(j = 0; j <= n; j++){
+					for(i = 0; i <= tamano; i++){
+						for(j = 0; j <= x; j++){
 					   	Matriz[i][j] = 0;
 						}
 					}
-					for(i = 0; i <= tam; i++){
+					for(i = 0; i <= tamano; i++){
 						aux[i] = 0;
 					}
 					aux[0] = 1;
-					for(i = 0; i < comb; i++){
-						for(j = 0; j < n; j++){
-							if(bin[j] == 1){
-								bin[j] = 0;
+					for(i = 0; i < combA; i++){
+						for(j = 0; j < x; j++){
+							if(sup[j] == 1){
+								sup[j] = 0;
 							}
 							else{
-								bin[j] = 1;
+								sup[j] = 1;
 								j = n + 1;
 							}
 						}
-						for(j = 0; j < n; j++){
-							if(bin[j] == 1){
-								suma = suma + conjunto[j];
+						for(j = 0; j < x; j++){
+							if(sup[j] == 1){
+								sumaT = sumaT + arreglo[j];
 							}
 						}
-						if(aux[suma] == 1){}
+						if(aux[sumaT] == 1){}
 						else{
-							for(j = 0; j < n; j++){
-								if(bin[j] == 1){
-									Matriz[suma][j + 1] = 1;
+							for(j = 0; j < x; j++){
+								if(sup[j] == 1){
+									Matriz[sumaT][j + 1] = 1;
 								}
 							}
-							aux[suma] = 1;
+							aux[sumaT] = 1;
 						}
-						suma = 0;
+						sumaT = 0;
 					}
 					Matriz[0][0] = 1;
-					conjunto[n] = 0;
-					var nuevoCodigoHtml = "";
-					nuevoCodigoHtml = nuevoCodigoHtml  + '<tr>';
-					for(j = 0; j <= (tam + 1); j++){
+					arreglo[x] = 0;
+					var nCHtml = "";
+					nCHtml = nCHtml  + '<tr>';
+					for(j = 0; j <= (tamano + 1); j++){
 						if(j === 0){
-							nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">';
+							nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">';
 						}
 						else{
-							nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + (j - 1);
+							nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + (j - 1);
 						}
-						nuevoCodigoHtml = nuevoCodigoHtml + '</td>';
+						nCHtml = nCHtml + '</td>';
 					}
-					nuevoCodigoHtml = nuevoCodigoHtml + '</tr>';
-					for(j = 0; j <= n; j++){
-						nuevoCodigoHtml = nuevoCodigoHtml  + '<tr>';
-						for(var i = 0; i <= (tam + 1); i++){
+					nCHtml = nCHtml + '</tr>';
+					for(j = 0; j <= x; j++){
+						nCHtml = nCHtml  + '<tr>';
+						for(var i = 0; i <= (tamano + 1); i++){
 							if(i === 0){
 								if(j === 0){
-									nuevoCodigoHtml = nuevoCodigoHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + conjunto[j + n];
+									nCHtml = nCHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + arreglo[j + x];
 								}
 								else{
-									nuevoCodigoHtml = nuevoCodigoHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + conjunto[j - 1];
+									nCHtml = nCHtml + '<td id="a' + j + '" style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + arreglo[x - 1];
 								}
 							}
 							else{
-								nuevoCodigoHtml = nuevoCodigoHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + Matriz[i - 1][j];
+								nCHtml = nCHtml + '<td style="border: navy 2px solid; height:35px; font-family: Quicksand; width:35px">' + Matriz[i - 1][j];
 							}
-							nuevoCodigoHtml = nuevoCodigoHtml + '</td>';
+							nCHtml = nCHtml + '</td>';
 						}
-						nuevoCodigoHtml = nuevoCodigoHtml + '</tr>';
+						nCHtml = nCHtml + '</tr>';
 					}
-					document.getElementById("Table").innerHTML = nuevoCodigoHtml;
+					document.getElementById("Table").innerHTML = nCHtml;
 				}
 			}
 		}
@@ -250,50 +250,50 @@ function DelNum(){
 }
 
 function busqueda(){
-	if(n === 0){
+	if(x === 0){
 		alert("No has ingresado numeros aun");
 	}
 	else{
-		for(k = 0; k <= n; k++){
+		for(k = 0; k <= x; k++){
 			if(k === 0){
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[n] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[x] + nCHtml4;
 			}
 			else{
-				nuevoCodigoHtml5 = nuevoCodigoHtml3 + conjunto[k - 1] + nuevoCodigoHtml4;
+				nCHtml5 = nCHtml3 + arreglo[k - 1] + nCHtml4;
 			}
-			document.getElementById("a" + (k)).innerHTML = nuevoCodigoHtml5;
+			document.getElementById("a" + (k)).innerHTML = nCHtml5;
 		}
-		var nuevoCodigoHtml = "";
-		var nuevoCodigoHtml1 = '<div style="color:#fff; background:red; font-weight:bold; height:100%; font-family: Quicksand; width:100%"><h>';
-		var nuevoCodigoHtml2 = '</h></div>';
+		var nCHtml = "";
+		var nCHtml1 = '<div style="color:#fff; background:red; font-weight:bold; height:100%; font-family: Quicksand; width:100%"><h>';
+		var nCHtml2 = '</h></div>';
 		if(document.getElementById("num3").value == ""){
 			alert("Inserta un valor numerico");
 		}
 		else{
 			var j = 0;
 			var i = 0;
-			var suma = 0;
+			var sumaT = 0;
 			var num3 = parseInt(document.getElementById("num3").value);
 			document.getElementById("num3").value = "";
-			if(aux[num3] === 0 || num3 > tam){
+			if(aux[num3] === 0 || num3 > tamano){
 				alert("Ningun subconjunto suma tu numero");
 			}
 			else{
-				for(j = 0; j <= n; j++){
+				for(j = 0; j <= x; j++){
 					if(Matriz[num3][j] == 1){
 						if(j === 0){
-							nuevoCodigoHtml = nuevoCodigoHtml1 + conjunto[n] + nuevoCodigoHtml2;
+							nCHtml = nCHtml1 + arreglo[x] + nCHtml2;
 						}
 						else{
-							nuevoCodigoHtml = nuevoCodigoHtml1 + conjunto[j - 1] + nuevoCodigoHtml2;
+							nCHtml = nCHtml1 + arreglo[j - 1] + nCHtml2;
 						}
-						document.getElementById("a" + (j)).innerHTML = nuevoCodigoHtml;
+						document.getElementById("a" + (j)).innerHTML = nCHtml;
 					}
 					else{
 						i = i + 1;
 					}
 				}
-				if(i > n){
+				if(i > x){
 					alert("Ningun subconjunto suma tu numero");
 				}
 				else{}
